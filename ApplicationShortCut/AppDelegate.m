@@ -17,7 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIApplicationShortcutItem *viewMyViewController = [[UIApplicationShortcutItem alloc] initWithType:@"com.bheema.shortCut.ApplicationShortCut.View" localizedTitle:@"SampleView"];
+    
+    NSMutableArray *shortCutArray = [NSMutableArray array];
+    [shortCutArray addObject:viewMyViewController];
+    [UIApplication sharedApplication].shortcutItems = shortCutArray;
     return YES;
+    
 }
 
 
